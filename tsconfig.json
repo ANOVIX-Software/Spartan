@@ -29,5 +29,5 @@
 		".next/types/**/*.ts",
 		"commitlint.config.ts"
 	],
-	"exclude": ["node_modules", ".next", ".husky"]
+	"exclude": ["node_modules", ".next", ".husky", "logs"]
 }

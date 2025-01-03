@@ -1,0 +1,38 @@
+// ================================================================
+// Description: Prisma schema for the database models
+// Author: Noah Huesman
+
+// Creation Date: 01/02/2025
+// Modification History:
+// #1 (01/02/2025) - Initial creation - Noah Huesman
+//=================================================================
+
+// ========================================
+// PRISMA CONFIGURATION
+// ========================================
+
+// Datasource
+datasource db {
+    provider = "mongodb"
+    url      = env("DATABASE_URL")
+}
+
+// Prisma client
+generator client {
+    provider = "prisma-client-js"
+}
+
+// ========================================
+// MODELS
+// ========================================
+
+// Document model
+model Document {
+    id      String @id @default(auto()) @map("_id") @db.ObjectId
+    userId  String @db.ObjectId
+    name    String
+    content String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
