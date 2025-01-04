@@ -2,3 +2,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Base body styles for page transitions */
+body {
+	transition-property: opacity, transform;
+	transition-timing-function: ease-in-out;
+	transition-duration: 200ms;
+	overflow: hidden;
+}
+
+/* Page transition effect */
+.page-transition {
+	opacity: 0;
+	transform: translateY(20px) scale(0.98);
+	pointer-events: none;
+}
