@@ -1,0 +1,9 @@
+.facebookButton {
+	background-color: #4267b2;
+	color: #fff;
+
+	@mixin hover {
+		color: #fff;
+		background-color: #3a5a9b;
+	}
+}

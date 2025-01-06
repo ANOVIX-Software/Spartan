@@ -25,18 +25,18 @@ const themeOverride = createTheme({
 
 	// Colors
 	colors: {
-		// Light red
+		// Cool blue
 		"accent-primary": [
-			"#faf0f1",
-			"#eddde0",
-			"#deb8be",
-			"#d09099",
-			"#c46e7b",
-			"#bd5967",
-			"#ba4d5d",
-			"#a43f4d",
-			"#933744",
-			"#812c3a",
+			"#edf3ff",
+			"#dce3f3",
+			"#b6c5e3",
+			"#8ea5d4",
+			"#6d8ac7",
+			"#5779bf",
+			"#4c70bd",
+			"#3d5fa7",
+			"#335596",
+			"#264986",
 		],
 	},
 })

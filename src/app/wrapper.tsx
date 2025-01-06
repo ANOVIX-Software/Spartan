@@ -34,7 +34,7 @@ export default function Wrapper({ children }: { children: React.ReactNode }) {
 	// Render
 	return (
 		<AppShell
-			header={{ height: { base: 60, md: 70 } }}
+			header={{ height: 70 }}
 			navbar={{
 				width: { base: 200, md: 350 },
 				breakpoint: "sm",
