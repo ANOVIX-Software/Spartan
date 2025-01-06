@@ -27,7 +27,13 @@ const eslintConfig = [
 			],
 			"no-var": "off",
 		},
-		ignores: ["node_modules", ".next", ".husky", "logs"],
+		ignores: [
+			"node_modules",
+			".next",
+			".husky",
+			"logs",
+			"playwright-results",
+		],
 	},
 ]
 export default eslintConfig
