@@ -1,5 +1,5 @@
 /* ================================================================
-Description: Header component for the public layout
+Description: Header component for the protected layout
 Author: Noah Huesman
 
 Creation Date: 01/02/2025
@@ -19,7 +19,7 @@ import Profile from "@/components/utils/profile"
 import TransitionLink from "@/components/utils/transition-link"
 
 // Mantine
-import { AppShellHeader, Group, Button, Title, Text } from "@mantine/core"
+import { AppShellHeader, Group, Button, Title } from "@mantine/core"
 
 // Tabler icons
 import { IconSwords, IconLogin2 } from "@tabler/icons-react"
@@ -42,17 +42,7 @@ export default async function Header() {
 				<Group>
 					<NavbarToggle />
 					<IconSwords size={30} />
-					<Title order={2}>Spartan</Title>
-					<Text
-						span
-						size="sm"
-						fs="italic"
-						c="accent-primary"
-						visibleFrom="sm"
-						mt="sm"
-					>
-						Next.js Template with MongoDB (Prisma) and Mantine
-					</Text>
+					<Title order={2}>PROTECTED</Title>
 				</Group>
 				<Group visibleFrom="sm">
 					{session?.user ? (

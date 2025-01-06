@@ -5,6 +5,7 @@ Author: Noah Huesman
 Creation Date: 01/02/2025
 Modification History:
 #1 (01/02/2025) - Initial creation - Noah Huesman
+#2 (01/05/2025) - Added dev login - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -16,6 +17,7 @@ import ResendLogin from "./resend-login"
 import GoogleLogin from "./google-login/"
 import FacebookLogin from "./facebook-login/"
 import GithubLogin from "./github-login"
+import KeycloakLogin from "./keycloak-login"
 
 // Mantine
 import { Stack, Paper, PaperProps, Text, Divider, Group } from "@mantine/core"
@@ -30,7 +32,7 @@ export default function LoginCard(props: PaperProps) {
 		<Paper
 			radius="sm"
 			p="xl"
-			w="500"
+			w="550"
 			withBorder
 			{...props}
 			shadow="lg"
@@ -51,6 +53,17 @@ export default function LoginCard(props: PaperProps) {
 				<FacebookLogin />
 				<GithubLogin />
 			</Stack>
+
+			{process.env.NODE_ENV === "development" && (
+				<div>
+					<Divider
+						label="THIS LINE AND BELOW IS NOT IN PRODUCTION BY DEFAULT"
+						labelPosition="center"
+						my="lg"
+					/>
+					<KeycloakLogin />
+				</div>
+			)}
 		</Paper>
 	)
 }

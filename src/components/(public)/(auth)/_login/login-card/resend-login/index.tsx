@@ -37,37 +37,44 @@ import { login } from "@/lib/server/auth"
 
 export default function ResendLogin() {
 	// Email validation schema
-	const emailSchema = z.object({
-		email: z.string().email({ message: "Invalid email" }),
+	const schema = z.object({
+		email: z
+			.string()
+			.trim()
+			.email({ message: "Invalid email" })
+			.max(100, { message: "Email must be at most 100 characters" }),
 	})
 
 	// Email form
-	const emailForm = useForm({
+	const form = useForm({
 		mode: "uncontrolled",
 		initialValues: { email: "" },
-		validate: zodResolver(emailSchema),
+		validate: zodResolver(schema),
 	})
 
 	// Render
 	return (
 		<form
-			onSubmit={emailForm.onSubmit(() =>
-				login("resend", "/", emailForm.getValues().email)
+			onSubmit={form.onSubmit(() =>
+				login("resend", "/", {
+					email: form.getValues().email,
+				})
 			)}
 		>
 			<TextInput
-				key={emailForm.key("email")}
+				key={form.key("email")}
 				label="Email"
-				placeholder="your@email.com"
+				placeholder="john.doe@email.com"
 				withAsterisk
 				rightSectionWidth={50}
-				{...emailForm.getInputProps("email")}
+				{...form.getInputProps("email")}
 				rightSection={
 					<ActionIcon
 						type="submit"
 						size={26}
 						w={50}
 						variant="transparent"
+						loading={form.submitting}
 					>
 						<IconSend2 size={18} stroke={1.5} />
 					</ActionIcon>

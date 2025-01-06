@@ -3,6 +3,7 @@
 	color: #fff;
 
 	@mixin hover {
+		color: #fff;
 		background-color: #3a5a9b;
 	}
 }

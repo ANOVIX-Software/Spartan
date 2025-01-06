@@ -1,10 +1,10 @@
 /* ================================================================
-Description: Login/register page
+Description: Dashboard page accessible to MODERATOR and ADMIN
 Author: Noah Huesman
 
-Creation Date: 01/02/2025
+Creation Date: 01/04/2025
 Modification History:
-#1 (01/02/2025) - Initial creation - Noah Huesman
+#1 (01/04/2025) - Initial creation - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -12,22 +12,14 @@ Modification History:
 // ========================================
 
 // Components
-import LoginCard from "@/components/(public)/(auth)/_login/login-card"
 
 // Mantine
-import { Container, Center } from "@mantine/core"
 
 // ========================================
-// LOGIN PAGE
+// DASHBOARD PAGE
 // ========================================
 
-export default function LoginPage() {
+export default function DashboardPage() {
 	// Render
-	return (
-		<Container>
-			<Center h={550}>
-				<LoginCard />
-			</Center>
-		</Container>
-	)
+	return <div>This page is only accessible to roles MODERATOR and ADMIN</div>
 }

@@ -47,7 +47,8 @@ export default async function PublicPage() {
 	return (
 		<Container fluid>
 			<Text size="xl">
-				Welcome, {session.user?.role}: {session.user?.name}!
+				Welcome, {session.user?.role}:{" "}
+				{session.user?.name ?? session.user?.email ?? ""}!
 			</Text>
 			<Text size="lg">Your Documents:</Text>
 

@@ -1,5 +1,5 @@
 /* ================================================================
-Description: Login/register page
+Description: Navbar component for the protected layout
 Author: Noah Huesman
 
 Creation Date: 01/02/2025
@@ -11,23 +11,20 @@ Modification History:
 // IMPORTS
 // ========================================
 
-// Components
-import LoginCard from "@/components/(public)/(auth)/_login/login-card"
-
 // Mantine
-import { Container, Center } from "@mantine/core"
+import { AppShellNavbar, AppShellSection, ScrollArea } from "@mantine/core"
 
 // ========================================
-// LOGIN PAGE
+// NAVBAR
 // ========================================
 
-export default function LoginPage() {
+export default function Navbar() {
 	// Render
 	return (
-		<Container>
-			<Center h={550}>
-				<LoginCard />
-			</Center>
-		</Container>
+		<AppShellNavbar p="md">
+			<AppShellSection grow component={ScrollArea}>
+				navbar
+			</AppShellSection>
+		</AppShellNavbar>
 	)
 }
