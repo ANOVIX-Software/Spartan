@@ -5,6 +5,7 @@ Author: Noah Huesman
 Creation Date: 01/02/2025
 Modification History:
 #1 (01/02/2025) - Initial creation - Noah Huesman
+#2 (01/06/2025) - Added logic for closing navbar and aside - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -27,6 +28,9 @@ import { useRouter } from "next/navigation"
 // Utils
 import sleep from "@/lib/utils/sleep"
 
+// Layout store
+import useLayoutStore from "@/lib/stores/layout"
+
 // ========================================
 // TRANSITION LINK PROPS
 // ========================================
@@ -45,6 +49,9 @@ export default function TransitionLink({
 	href,
 	...props
 }: TransitionLinkProps) {
+	// Layout store
+	const { isNavbarCollapsed, isAsideCollapsed } = useLayoutStore()
+
 	// Initialize Router
 	const router = useRouter()
 
@@ -52,6 +59,12 @@ export default function TransitionLink({
 	const handleTransition = async (
 		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
 	) => {
+		// If navbar or aside are open, close them
+		if (!isNavbarCollapsed)
+			useLayoutStore.setState({ isNavbarCollapsed: true })
+		if (!isAsideCollapsed)
+			useLayoutStore.setState({ isAsideCollapsed: true })
+
 		// Prevent default behavior
 		e.preventDefault()
 
