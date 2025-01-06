@@ -29,5 +29,11 @@
 		".next/types/**/*.ts",
 		"commitlint.config.ts"
 	],
-	"exclude": ["node_modules", ".next", ".husky", "logs"]
+	"exclude": [
+		"node_modules",
+		".next",
+		".husky",
+		"logs",
+		"playwright-results"
+	]
 }
