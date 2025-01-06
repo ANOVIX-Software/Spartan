@@ -11,6 +11,9 @@ Modification History:
 // IMPORTS
 // ========================================
 
+// Components
+import SaveDocument from "@/components/(public)/save-document"
+
 // Mantine
 import { Container, List, ListItem, Center, Loader, Text } from "@mantine/core"
 
@@ -69,6 +72,7 @@ export default async function PublicPage() {
 					)}
 				</div>
 			)}
+			<SaveDocument />
 		</Container>
 	)
 }

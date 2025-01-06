@@ -5,6 +5,7 @@ Author: Noah Huesman
 Creation Date: 01/02/2025
 Modification History:
 #1 (01/02/2025) - Initial creation - Noah Huesman
+#2 (01/06/2025) - Added notifications - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -21,6 +22,10 @@ import {
 	ColorSchemeScript,
 	MantineProvider,
 } from "@mantine/core"
+
+// Mantine notifications
+import "@mantine/notifications/styles.css"
+import { Notifications } from "@mantine/notifications"
 
 // Theme
 import { theme } from "@/app/theme"
@@ -50,6 +55,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 			</head>
 			<body>
 				<MantineProvider defaultColorScheme="auto" theme={theme}>
+					<Notifications autoClose={5000} />
 					{children}
 				</MantineProvider>
 			</body>
