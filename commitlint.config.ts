@@ -21,6 +21,7 @@ const config: UserConfig = {
 				"chore",
 				"revert",
 				"init",
+				"merge",
 			],
 		],
 	},

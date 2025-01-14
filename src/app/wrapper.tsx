@@ -20,8 +20,8 @@ Modification History:
 // Mantine
 import { AppShell } from "@mantine/core"
 
-// Layout store
-import useLayoutStore from "@/lib/stores/layout"
+// Stores library
+import { useLayoutStore } from "@/library/stores"
 
 // ========================================
 //  WRAPPER

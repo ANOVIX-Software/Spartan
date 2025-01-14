@@ -17,14 +17,14 @@ Modification History:
 import NextAuth from "next-auth"
 import type { Provider } from "next-auth/providers"
 
-// Prisma client
+// Prisma
 import { prisma } from "@/prisma"
 
 // Prisma adapter
 import { PrismaAdapter } from "@auth/prisma-adapter"
 
-// Send verification email
-import { sendVerificationEmail } from "@/lib/server/auth"
+// Server library
+import { sendVerificationEmail } from "@/library/server"
 
 // Providers
 import Keycloak from "next-auth/providers/keycloak"
