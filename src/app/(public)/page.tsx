@@ -11,17 +11,14 @@ Modification History:
 // IMPORTS
 // ========================================
 
-// Components
-import SaveDocument from "@/components/(public)/save-document"
+// Public components
+import { SaveDocument } from "./components"
 
 // Mantine
 import { Container, List, ListItem, Center, Loader, Text } from "@mantine/core"
 
-// Auth server actions
-import { getSession } from "@/lib/server/auth"
-
-// Document server actions
-import { getUserDocuments } from "@/lib/server/document"
+// Server library
+import { getUserDocuments, getSession } from "@/library/server"
 
 // ========================================
 // PUBLIC PAGE

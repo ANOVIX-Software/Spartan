@@ -11,8 +11,8 @@ Modification History:
 // IMPORTS
 // ========================================
 
-// Components
-import Header from "@/components/(public)/(auth)/header"
+// Auth components
+import { Header } from "./components"
 
 // Mantine
 import { AppShell, AppShellHeader, AppShellMain } from "@mantine/core"

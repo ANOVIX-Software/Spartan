@@ -11,8 +11,8 @@ Modification History:
 // IMPORTS
 // ========================================
 
-// Components
-import Error404 from "@/components/utils/error-404"
+// Utility components
+import { Error404 } from "@/components/utils"
 
 // ========================================
 // NOT FOUND

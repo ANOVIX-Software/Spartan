@@ -11,8 +11,8 @@ Modification History:
 // IMPORTS
 // ========================================
 
-// Components
-import Login from "@/components/(public)/(auth)/_login/"
+// Login components
+import { LoginCard } from "./components"
 
 // Mantine
 import { Container, Center } from "@mantine/core"
@@ -26,7 +26,7 @@ export default function LoginPage() {
 	return (
 		<Container>
 			<Center h={550}>
-				<Login />
+				<LoginCard />
 			</Center>
 		</Container>
 	)

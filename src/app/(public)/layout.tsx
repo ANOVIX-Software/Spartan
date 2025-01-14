@@ -14,10 +14,8 @@ Modification History:
 // Wrapper
 import Wrapper from "@/app/wrapper"
 
-// Components
-import Header from "@/components/(public)/header"
-import Navbar from "@/components/(public)/navbar"
-import Aside from "@/components/(public)/aside"
+// Public components
+import { Header, Navbar, Aside } from "./components"
 
 // ========================================
 // PUBLIC LAYOUT

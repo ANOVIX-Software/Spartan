@@ -12,7 +12,7 @@ Modification History:
 // IMPORTS
 // ========================================
 
-// Global CSS
+// CSS
 import "./globals.css"
 
 // Mantine
@@ -28,7 +28,7 @@ import "@mantine/notifications/styles.css"
 import { Notifications } from "@mantine/notifications"
 
 // Theme
-import { theme } from "@/app/theme"
+import { theme } from "./theme"
 
 // Next
 import type { Metadata } from "next"
@@ -39,7 +39,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
 	title: "Spartan",
-	description: "Next.js Template with MongoDB (Prisma) and Mantine",
+	description: "A Next.js Template with MongoDB (Prisma) and Mantine",
 }
 
 // ========================================
