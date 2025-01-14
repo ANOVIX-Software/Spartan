@@ -12,7 +12,7 @@ Modification History:
 // ========================================
 
 // Components
-import LoginCard from "@/components/(public)/(auth)/_login/login-card"
+import Login from "@/components/(public)/(auth)/_login/"
 
 // Mantine
 import { Container, Center } from "@mantine/core"
@@ -26,7 +26,7 @@ export default function LoginPage() {
 	return (
 		<Container>
 			<Center h={550}>
-				<LoginCard />
+				<Login />
 			</Center>
 		</Container>
 	)

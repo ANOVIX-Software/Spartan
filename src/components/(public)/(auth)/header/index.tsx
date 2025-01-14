@@ -28,7 +28,7 @@ export default function Header() {
 	// Render
 	return (
 		<Group h="100%">
-			<TransitionLink href="/">
+			<TransitionLink href="/" closeNavbar closeAside>
 				<Button
 					size="md"
 					variant="outline"
