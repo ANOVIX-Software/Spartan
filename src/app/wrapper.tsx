@@ -36,22 +36,21 @@ export default function Wrapper({ children }: { children: React.ReactNode }) {
 		<AppShell
 			header={{ height: 70 }}
 			navbar={{
-				width: { base: 200, md: 350 },
-				breakpoint: "sm",
+				width: { base: 300, lg: 350 },
+				breakpoint: "xs",
 				collapsed: {
 					mobile: isNavbarCollapsed,
 					desktop: isNavbarCollapsed,
 				},
 			}}
 			aside={{
-				width: { base: 200, md: 350 },
-				breakpoint: "sm",
+				width: { base: 300, lg: 350 },
+				breakpoint: "xs",
 				collapsed: {
 					mobile: isAsideCollapsed,
 					desktop: isAsideCollapsed,
 				},
 			}}
-			padding="md"
 		>
 			<AppShell.Main>{children}</AppShell.Main>
 		</AppShell>

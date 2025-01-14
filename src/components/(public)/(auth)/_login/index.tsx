@@ -1,5 +1,5 @@
 /* ================================================================
-Description: Login card
+Description: Login
 Author: Noah Huesman
 
 Creation Date: 01/02/2025
@@ -23,10 +23,10 @@ import KeycloakLogin from "./keycloak-login"
 import { Stack, Paper, PaperProps, Text, Divider, Group } from "@mantine/core"
 
 // ========================================
-// LOGIN CARD
+// LOGIN
 // ========================================
 
-export default function LoginCard(props: PaperProps) {
+export default function Login(props: PaperProps) {
 	// Render
 	return (
 		<Paper

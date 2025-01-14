@@ -57,23 +57,29 @@ export default function Profile({ session }: { session: Session }) {
 
 			<Menu.Dropdown>
 				<Menu.Label>Profile</Menu.Label>
-				{session.user?.role === "MODERATOR" ||
-					(session.user?.role === "ADMIN" && (
-						<div>
-							<TransitionLink href="/">
-								<Menu.Item leftSection={<IconHome />}>
-									Home
-								</Menu.Item>
-							</TransitionLink>
-							<TransitionLink href="/dashboard">
-								<Menu.Item
-									leftSection={<IconLayoutDashboard />}
-								>
-									Dashboard
-								</Menu.Item>
-							</TransitionLink>
-						</div>
-					))}
+				{(session.user?.role === "MODERATOR" ||
+					session.user?.role === "ADMIN") && (
+					<div>
+						<TransitionLink
+							href="/"
+							closeNavbar={false}
+							closeAside={false}
+						>
+							<Menu.Item leftSection={<IconHome />}>
+								Home
+							</Menu.Item>
+						</TransitionLink>
+						<TransitionLink
+							href="/dashboard"
+							closeNavbar={false}
+							closeAside
+						>
+							<Menu.Item leftSection={<IconLayoutDashboard />}>
+								Dashboard
+							</Menu.Item>
+						</TransitionLink>
+					</div>
+				)}
 				<Menu.Item
 					leftSection={<IconLogout2 />}
 					onClick={() => logout("/")}

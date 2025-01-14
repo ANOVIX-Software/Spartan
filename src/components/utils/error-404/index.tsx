@@ -41,7 +41,7 @@ export default function Error404() {
 				If you think this is an error contact support.
 			</Text>
 			<Group justify="center">
-				<TransitionLink href="/">
+				<TransitionLink href="/" closeNavbar={false} closeAside={false}>
 					<Button variant="outline" size="md">
 						Take me back to home page
 					</Button>
