@@ -39,11 +39,7 @@ export function AsideClose() {
 
 	// Render
 	return (
-		<ActionIcon
-			variant="transparent"
-			color="black"
-			aria-label="Close aside"
-		>
+		<ActionIcon variant="transparent" aria-label="Close aside">
 			<IconX onClick={toggleAsideCollapse} />
 		</ActionIcon>
 	)
