@@ -42,7 +42,7 @@ export const getUserDocuments = async (userId: string) => {
 			},
 		})
 
-		// Log the success in dev
+		// Log success in dev
 		if (process.env.NODE_ENV === "development") {
 			logger.info(`Successfully fetched documents for user: ${userId}`, {
 				userId: userId,

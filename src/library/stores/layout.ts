@@ -13,7 +13,6 @@ Modification History:
 
 // Zustand
 import { create } from "zustand"
-import { persist, PersistOptions } from "zustand/middleware"
 
 // ========================================
 // INTERFACE
@@ -33,26 +32,22 @@ interface LayoutState {
 // LAYOUT STORE
 // ========================================
 
-export const useLayoutStore = create<LayoutState>()(
-	// Preserve state in local storage
-	persist(
-		(set) => ({
-			// Navbar
-			isNavbarCollapsed: true, // Initial state
-			toggleNavbarCollapse: () =>
-				set((state) => ({
-					isNavbarCollapsed: !state.isNavbarCollapsed,
-				})),
+export const useLayoutStore = create<LayoutState>()((set) => ({
+	// Navbar
+	isNavbarCollapsed: true, // Initial state
+	toggleNavbarCollapse: () =>
+		set((state) => ({
+			isNavbarCollapsed: !state.isNavbarCollapsed,
+		})),
+	openNavbar: () => set({ isNavbarCollapsed: false }),
+	closeNavbar: () => set({ isNavbarCollapsed: true }),
 
-			// Aside
-			isAsideCollapsed: true, // Initial state
-			toggleAsideCollapse: () =>
-				set((state) => ({
-					isAsideCollapsed: !state.isAsideCollapsed,
-				})),
-		}),
-		{
-			name: "layout-storage",
-		} as PersistOptions<LayoutState>
-	)
-)
+	// Aside
+	isAsideCollapsed: true, // Initial state
+	toggleAsideCollapse: () =>
+		set((state) => ({
+			isAsideCollapsed: !state.isAsideCollapsed,
+		})),
+	openAside: () => set({ isAsideCollapsed: false }),
+	closeAside: () => set({ isAsideCollapsed: true }),
+}))
