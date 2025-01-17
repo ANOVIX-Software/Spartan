@@ -59,7 +59,11 @@ export async function Header() {
 					{session?.user ? (
 						<Profile session={session} />
 					) : (
-						<TransitionLink href="/login" closeNavbar closeAside>
+						<TransitionLink
+							href="/login"
+							closeNavbarOnTransition
+							closeAsideOnTransition
+						>
 							<Button
 								size="md"
 								variant="outline"

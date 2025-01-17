@@ -14,7 +14,8 @@
 		"dev:email": "email dev --dir ./src/components/emails --port 4000",
 		"test:e2e": "npx playwright test",
 		"clean": "rimraf .next node_modules && npm install",
-		"build": "npm run clean && next build",
+		"clean:build": "npm run clean && next build",
+		"build": "next build",
 		"start": "next start"
 	},
 	"lint-staged": {

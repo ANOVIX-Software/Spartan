@@ -65,8 +65,8 @@ export function Profile({ session }: { session: Session }) {
 					<div>
 						<TransitionLink
 							href="/"
-							closeNavbar={false}
-							closeAside={false}
+							closeNavbarOnTransition={false}
+							closeAsideOnTransition
 						>
 							<Menu.Item leftSection={<IconHome />}>
 								Home
@@ -74,8 +74,8 @@ export function Profile({ session }: { session: Session }) {
 						</TransitionLink>
 						<TransitionLink
 							href="/dashboard"
-							closeNavbar={false}
-							closeAside
+							closeNavbarOnTransition={false}
+							closeAsideOnTransition
 						>
 							<Menu.Item leftSection={<IconLayoutDashboard />}>
 								Dashboard

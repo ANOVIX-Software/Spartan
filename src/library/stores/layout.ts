@@ -5,6 +5,7 @@ Author: Noah Huesman
 Creation Date: 01/02/2025
 Modification History:
 #1 (01/02/2025) - Initial creation - Noah Huesman
+#2 (01/17/2025) - Removed persist option and added open and close functions - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -21,11 +22,15 @@ import { create } from "zustand"
 interface LayoutState {
 	// Navbar
 	isNavbarCollapsed: boolean
-	toggleNavbarCollapse: () => void
+	toggleNavbar: () => void
+	openNavbar: () => void
+	closeNavbar: () => void
 
 	// Aside
 	isAsideCollapsed: boolean
-	toggleAsideCollapse: () => void
+	toggleAside: () => void
+	openAside: () => void
+	closeAside: () => void
 }
 
 // ========================================
@@ -35,7 +40,7 @@ interface LayoutState {
 export const useLayoutStore = create<LayoutState>()((set) => ({
 	// Navbar
 	isNavbarCollapsed: true, // Initial state
-	toggleNavbarCollapse: () =>
+	toggleNavbar: () =>
 		set((state) => ({
 			isNavbarCollapsed: !state.isNavbarCollapsed,
 		})),
@@ -44,7 +49,7 @@ export const useLayoutStore = create<LayoutState>()((set) => ({
 
 	// Aside
 	isAsideCollapsed: true, // Initial state
-	toggleAsideCollapse: () =>
+	toggleAside: () =>
 		set((state) => ({
 			isAsideCollapsed: !state.isAsideCollapsed,
 		})),
