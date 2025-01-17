@@ -32,14 +32,10 @@ import { useLayoutStore } from "@/library/stores"
 
 export function NavbarToggle() {
 	// Layout store
-	const { isNavbarCollapsed, toggleNavbarCollapse } = useLayoutStore()
+	const { isNavbarCollapsed, toggleNavbar } = useLayoutStore()
 
 	// Render
 	return (
-		<Burger
-			opened={!isNavbarCollapsed}
-			onClick={toggleNavbarCollapse}
-			size="sm"
-		/>
+		<Burger opened={!isNavbarCollapsed} onClick={toggleNavbar} size="sm" />
 	)
 }

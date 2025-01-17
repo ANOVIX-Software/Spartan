@@ -6,6 +6,7 @@ Creation Date: 01/02/2025
 Modification History:
 #1 (01/02/2025) - Initial creation - Noah Huesman
 #2 (01/09/2025) - Added option to close navbar and aside - Noah Huesman
+#3 (01/17/2025) - Replaced toggleNavbar and toggleAside with closeNavbar and closeAside functions - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -41,8 +42,8 @@ import { useLayoutStore } from "@/library/stores"
 interface TransitionLinkProps extends LinkProps {
 	children: ReactNode
 	href: string
-	closeNavbar: boolean
-	closeAside: boolean
+	closeNavbarOnTransition: boolean
+	closeAsideOnTransition: boolean
 }
 
 // ========================================
@@ -52,12 +53,12 @@ interface TransitionLinkProps extends LinkProps {
 export function TransitionLink({
 	children,
 	href,
-	closeNavbar,
-	closeAside,
+	closeNavbarOnTransition,
+	closeAsideOnTransition,
 	...props
 }: TransitionLinkProps) {
 	// Layout store
-	const { isNavbarCollapsed, isAsideCollapsed } = useLayoutStore()
+	const { closeNavbar, closeAside } = useLayoutStore()
 
 	// Initialize Router
 	const router = useRouter()
@@ -66,11 +67,9 @@ export function TransitionLink({
 	const handleTransition = async (
 		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
 	) => {
-		// If navbar or aside are open, close them
-		if (closeNavbar && !isNavbarCollapsed)
-			useLayoutStore.setState({ isNavbarCollapsed: true })
-		if (closeAside && !isAsideCollapsed)
-			useLayoutStore.setState({ isAsideCollapsed: true })
+		// Close navbar and aside if specified
+		if (closeNavbarOnTransition) closeNavbar()
+		if (closeAsideOnTransition) closeAside()
 
 		// Prevent default behavior
 		e.preventDefault()

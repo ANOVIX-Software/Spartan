@@ -31,7 +31,11 @@ export function Header() {
 	// Render
 	return (
 		<Group h="100%">
-			<TransitionLink href="/" closeNavbar closeAside>
+			<TransitionLink
+				href="/"
+				closeNavbarOnTransition
+				closeAsideOnTransition
+			>
 				<Button
 					size="md"
 					variant="outline"

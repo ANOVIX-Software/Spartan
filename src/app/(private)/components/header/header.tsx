@@ -7,6 +7,7 @@ Modification History:
 #1 (01/02/2025) - Initial creation - Noah Huesman
 #2 (01/02/2025) - Added project icon and title - Noah Huesman
 #3 (01/03/2025) - Added auth components - Noah Huesman
+#4 (01/17/2025) - Removed auth components as they are not needed here, only admins and moderators can - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -17,13 +18,13 @@ Modification History:
 // import classes from "./header.module.css"
 
 // Shared components
-import { Profile, TransitionLink, NavbarToggle } from "@/components/shared"
+import { Profile, NavbarToggle } from "@/components/shared"
 
 // Mantine
-import { AppShellHeader, Group, Button, Title } from "@mantine/core"
+import { AppShellHeader, Group, Title } from "@mantine/core"
 
 // Tabler icons
-import { IconSwords, IconLogin2 } from "@tabler/icons-react"
+import { IconSwords } from "@tabler/icons-react"
 
 // Server library
 import { getSession } from "@/library/server"
@@ -46,20 +47,7 @@ export async function Header() {
 					<Title order={2}>PROTECTED</Title>
 				</Group>
 				<Group visibleFrom="sm">
-					{session?.user ? (
-						<Profile session={session} />
-					) : (
-						<TransitionLink href="/login" closeNavbar closeAside>
-							<Button
-								size="md"
-								variant="outline"
-								type="submit"
-								rightSection={<IconLogin2 size={20} />}
-							>
-								Login
-							</Button>
-						</TransitionLink>
-					)}
+					<Profile session={session!} />
 				</Group>
 			</Group>
 		</AppShellHeader>

@@ -5,6 +5,7 @@ Author: Noah Huesman
 Creation Date: 01/07/2025
 Modification History:
 #1 (01/07/2025) - Initial creation - Noah Huesman
+#2 (01/17/2025) - Replaced toggleAside with closeAside function - Noah Huesman
 ================================================================ */
 
 // ========================================
@@ -35,12 +36,12 @@ import { useLayoutStore } from "@/library/stores"
 
 export function AsideClose() {
 	// Layout store
-	const { toggleAsideCollapse } = useLayoutStore()
+	const { closeAside } = useLayoutStore()
 
 	// Render
 	return (
 		<ActionIcon variant="transparent" aria-label="Close aside">
-			<IconX onClick={toggleAsideCollapse} />
+			<IconX onClick={closeAside} />
 		</ActionIcon>
 	)
 }
