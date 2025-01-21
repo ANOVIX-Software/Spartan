@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Variables */
+:root {
+}
+
 /* Base body styles for page transitions */
 body {
 	transition-property: opacity, transform;

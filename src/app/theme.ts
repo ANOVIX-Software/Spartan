@@ -12,7 +12,12 @@ Modification History:
 // ========================================
 
 // Mantine
-import { createTheme, DEFAULT_THEME, mergeMantineTheme } from "@mantine/core"
+import {
+	createTheme,
+	DEFAULT_THEME,
+	mergeMantineTheme,
+	colorsTuple,
+} from "@mantine/core"
 
 // ========================================
 // THEME
@@ -25,19 +30,8 @@ const themeOverride = createTheme({
 
 	// Colors
 	colors: {
-		// Cool blue
-		"accent-primary": [
-			"#edf3ff",
-			"#dce3f3",
-			"#b6c5e3",
-			"#8ea5d4",
-			"#6d8ac7",
-			"#5779bf",
-			"#4c70bd",
-			"#3d5fa7",
-			"#335596",
-			"#264986",
-		],
+		// Flame
+		"accent-primary": colorsTuple("#DE541E"),
 	},
 })
 

@@ -20,7 +20,7 @@ Modification History:
 // Prisma
 import { prisma } from "@/prisma"
 
-// Logger
+// Utils library
 import { createLogger } from "@/library/utils"
 
 // ========================================
