@@ -27,7 +27,7 @@ import { render } from "@react-email/render"
 // Components
 import { MagicLink } from "@/components/emails"
 
-// Logger
+// Utils library
 import { createLogger } from "@/library/utils"
 
 // ========================================
