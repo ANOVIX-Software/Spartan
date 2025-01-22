@@ -11,8 +11,8 @@ Modification History:
 // IMPORTS
 // ========================================
 
-// Wrapper
-import Wrapper from "@/app/wrapper"
+// Appshell wrapper
+import AppshellWrapper from "@/app/appshell-wrapper"
 
 // Private components
 import { Header, Navbar, Aside } from "./components"
@@ -43,11 +43,11 @@ export default async function PrivateLayout({
 
 	// Render private content if user is signed in
 	return (
-		<Wrapper>
+		<AppshellWrapper>
 			<Header />
 			<Navbar />
 			<Aside />
 			{children}
-		</Wrapper>
+		</AppshellWrapper>
 	)
 }

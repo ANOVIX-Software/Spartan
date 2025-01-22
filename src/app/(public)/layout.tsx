@@ -11,8 +11,8 @@ Modification History:
 // IMPORTS
 // ========================================
 
-// Wrapper
-import Wrapper from "@/app/wrapper"
+// Appshell wrapper
+import AppshellWrapper from "@/app/appshell-wrapper"
 
 // Public components
 import { Header, Navbar, Aside } from "./components"
@@ -28,11 +28,11 @@ export default function PublicLayout({
 }) {
 	// Render
 	return (
-		<Wrapper>
+		<AppshellWrapper>
 			<Header />
 			<Navbar />
 			<Aside />
 			{children}
-		</Wrapper>
+		</AppshellWrapper>
 	)
 }
