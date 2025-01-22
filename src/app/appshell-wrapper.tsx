@@ -24,10 +24,14 @@ import { AppShell } from "@mantine/core"
 import { useLayoutStore } from "@/library/stores"
 
 // ========================================
-//  WRAPPER
+//  APPSHELL WRAPPER
 // ========================================
 
-export default function Wrapper({ children }: { children: React.ReactNode }) {
+export default function AppshellWrapper({
+	children,
+}: {
+	children: React.ReactNode
+}) {
 	// Layout store
 	const { isNavbarCollapsed, isAsideCollapsed } = useLayoutStore()
 
