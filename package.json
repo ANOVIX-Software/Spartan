@@ -15,6 +15,7 @@
 		"test:e2e": "npx playwright test",
 		"clean": "rimraf .next node_modules && npm install",
 		"clean:build": "npm run clean && next build",
+		"build:start": "next build && next start",
 		"build": "next build",
 		"start": "next start"
 	},
