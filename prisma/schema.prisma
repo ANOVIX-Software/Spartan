@@ -6,6 +6,7 @@
 // Modification History:
 // #1 (01/02/2025) - Initial creation - Noah Huesman
 // #2 (01/03/2025) - Added Auth.js models - Noah Huesman
+// #3 (01/30/2025) - Added comments to document model - Noah Huesman
 //=================================================================
 
 // ========================================
@@ -101,13 +102,20 @@ model VerificationToken {
 
 // Document model
 model Document {
-    id      String @id @default(auto()) @map("_id") @db.ObjectId
-    userId  String @db.ObjectId
-    name    String
+    // id
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    // Name of document
+    name String
+
+    // Content of document
     content String
 
+    // User relation to link documents to a user
+    userId String @db.ObjectId
+    user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    // Timestamps
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-
-    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
