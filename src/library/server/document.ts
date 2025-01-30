@@ -30,7 +30,7 @@ import { createLogger } from "@/library/utils"
 const logger = await createLogger()
 
 // ========================================
-// GET A USER'S DOCUMENTS
+// GET USER DOCUMENTS
 // ========================================
 
 export const getUserDocuments = async (userId: string) => {
@@ -45,8 +45,7 @@ export const getUserDocuments = async (userId: string) => {
 		// Log success in dev
 		if (process.env.NODE_ENV === "development") {
 			logger.info(`Successfully fetched documents for user: ${userId}`, {
-				userId: userId,
-				documentCount: documents.length,
+				documents: documents,
 			})
 		}
 
